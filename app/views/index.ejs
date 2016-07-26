@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= typeof title === 'undefined' ? '海融易': title %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/font-awesome/css/font-awesome.min.css">
+
+  <script type="text/javascript" src="/nativecallback.js"></script>
+</head>
+<body>
+<header id="header">
+  <%- typeof headerData === 'undefined'?'':headerData %>
+</header>
+<div id="container">
+  <div style="height: 100%;"><%- reactOutput %></div>
+</div>
+</body>
+<script><%- typeof stateData === 'undefined'?'':stateData%></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?4f3650822024d56fdcb04be0ecdb6071";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+  (function () {
+    var ma = document.createElement("script");
+    ma.type = "text/javascript";
+    ma.async = true;
+    ma.id = "wmqf";
+    ma.src ="https://data.kjtpay.com:8082/js/tj.js?cb61d8a91cd13b72a1c2bd25e13a8ea1";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(ma, s);
+  })();
+</script>
+
+<!-- build:js -->
+
+<script type="text/javascript" src="/bundle.js"></script>
+<script type="text/javascript">
+
+// ;!function(pkg, undefined){
+//   var STATE = 'x-back';
+//   var element;
+// 
+//   var onPopState = function(event){
+//     event.state === STATE && fire();
+//   }
+// 
+//   var record = function(state){
+//     history.pushState(state, null, location.href);
+//   }
+// 
+//   var fire = function(){
+//     var event = document.createEvent('Events');
+//     event.initEvent(STATE, false, false);
+//     element.dispatchEvent(event);
+//   }
+// 
+//   var listen = function(listener){
+//     element.addEventListener(STATE, listener, false);
+//   }
+// 
+//   ;!function(){
+//     element = document.createElement('span');
+//     window.addEventListener('popstate', onPopState);
+//     this.listen = listen;
+//     record(STATE);
+//   }.call(window[pkg] = window[pkg] || {});
+// 
+// }('XBack');
+// XBack.listen(function(ddd){
+//     //alert('oh! you press the back button');
+// });
+
+</script>
+<!-- endbuild -->
+</html>
