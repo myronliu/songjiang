@@ -25,7 +25,7 @@ global.ajaxConfig = {url:apiAddress,header:{"Content-Type":"application/json","X
 
 router.use(function(req,res,next){
   // 服务层接收header，设置ajaxConfig，需要传到js client
-  var sUserAgent = req.headers["user-agent"].toLowerCase();//获取客户端的环境
+  // var sUserAgent = req.headers["user-agent"].toLowerCase();//获取客户端的环境
   
   var ip = req.get('x-forwarded-for') || req.connection.remoteAddress;
   if (req.get('X-KJT-Agent')) {   
