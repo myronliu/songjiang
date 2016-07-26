@@ -15,8 +15,8 @@ export default class Footer extends React.Component{
     data:{}
   }
   nextPage(){
-    if(this.props.data.link){
-      window.location = this.props.data.link;
+    if(this.props.data.content.news_item[0].url){
+      window.location = this.props.data.content.news_item[0].url;
     }
   }
   render(){
