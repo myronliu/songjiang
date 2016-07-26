@@ -22,7 +22,13 @@ export default class item extends React.Component {
   renderItems(){
     var w = 100/this.props.btnList.length;
     return this.props.btnList.map(function(item, i){
-      return(<Item key={i} itemStyle={{width: w+'%'}} className='showMessage' data={item} handleTouch={this.handleTouch.bind(this)}></Item>)
+      var sty={};
+      if(item.select){
+        sty={width: w+'%', color: '#00af00'}
+      }else{
+        sty={width: w+'%'}
+      }
+      return(<Item key={i} itemStyle={sty} className='showMessage' data={item} handleTouch={this.handleTouch.bind(this)}></Item>)
     }.bind(this))
   }
   render(){

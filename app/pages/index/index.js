@@ -11,7 +11,8 @@ import Item from '../../components/item';
 export default class RegSucc extends BasePage {
   state = {
     btnList:[{
-      title: '本月资讯'
+      title: '本月资讯',
+      select: true
     },{
       title: '往期回顾'
     }],
@@ -27,10 +28,14 @@ export default class RegSucc extends BasePage {
   }
   handleTouch(val){
     if(val === "本月资讯"){
+      this.state.btnList[0].select = true;
+      this.state.btnList[1].select = false;
       this.setState({
-        list: this.props.data.listNow
+        list: this.props.data.listNow,
       })
     }else if(val === "往期回顾"){
+      this.state.btnList[0].select = false;
+      this.state.btnList[1].select = true;
       this.setState({
         list: this.props.data.listPast
       })
