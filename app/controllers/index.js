@@ -6,7 +6,7 @@ var exp      = require('../helper/expose');
 module.exports ={
   index : function(req,res,next){
     return Promise.resolve().then(function(){
-      var list = Index.list()
+      var list = Index.list(req.query.type)
       	.then(function(result){
           // console.log(result.res.IncomingMessage)
           // console.log(result.res.IncomingMessage.text)

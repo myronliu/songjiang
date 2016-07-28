@@ -10,7 +10,7 @@ export default class item extends React.Component {
     window.location = this.props.data.content.news_item[0].url;
   }
   render(){
-    console.log(this.props.data)
+    // console.log(this.props.data)
     return (
       <TapAble onTap={this.gotoPage.bind(this)}>
         <div className={this.props.data.content.news_item[0].thumb_media_id ? "sucai-img" : "hide"}>

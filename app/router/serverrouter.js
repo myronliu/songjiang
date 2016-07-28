@@ -66,12 +66,12 @@ router.get('/process4',function(req,res){
 
 router.get(['/','/index'],function(req,res){
   // 获取数据
-  IndexController.index()
+  IndexController.index(req,res)
     .spread(function(list){
       var listNow=[];
       var listPast=[];
       list = JSON.parse(list)
-      console.log(list)
+      // console.log(list)
       if(list && list.item && list.item.length > 0){
         for(var i = 0; i < list.item.length; i++){
           var nowMonth = new Date();
