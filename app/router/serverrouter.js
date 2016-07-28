@@ -48,6 +48,22 @@ router.get('/error',function(req,res){
   res.render('index', {reactOutput: reactHtml,title:'出错啦'});
 })
 
+router.get('/process1',function(req,res){
+  res.render('process1');
+})
+
+router.get('/process2',function(req,res){
+  res.render('process2');
+})
+
+router.get('/process3',function(req,res){
+  res.render('process3');
+})
+
+router.get('/process4',function(req,res){
+  res.render('process4');
+})
+
 router.get(['/','/index'],function(req,res){
   // 获取数据
   IndexController.index()
