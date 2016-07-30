@@ -75,8 +75,8 @@ router.get(['/','/index'],function(req,res){
       if(list && list.item && list.item.length > 0){
         for(var i = 0; i < list.item.length; i++){
           var nowMonth = new Date();
-          var crt = new Date(parseInt(list.item[i].content.create_time) * 1000);
-          console.log(crt.getFullYear())
+          var crt = new Date(parseInt(list.item[i].update_time) * 1000);
+          // console.log(crt.getFullYear())
           if(crt.getFullYear() === nowMonth.getFullYear() && crt.getMonth() === nowMonth.getMonth()){
             listNow.push(list.item[i]);
           }else{
@@ -97,55 +97,9 @@ router.get(['/','/index'],function(req,res){
       console.log("异常了---->")
       console.log(ex)
       var data = {
-        listNow: [{
-          image:"http://img1.imgtn.bdimg.com/it/u=3461766366,1830101633&fm=21&gp=0.jpg",
-          title : "注册送风景啊少雷地方就是打开房间少雷地方就收到了房间少雷封建时代雷锋精688元",
-          description: 'lalaldsfsalfds大煞风景啊少雷地方就是打开房间少雷地方就收到了房间少雷封建时代雷锋精神独立开发阶段少雷开发建设的路口附近',
-          link : "http://www.hairongyi.com/activity/activityPage.htm?id=71",
-        },{
-          image:"http://img1.imgtn.bdimg.com/it/u=3461766366,1830101633&fm=21&gp=0.jpg",
-          title : "注册送688元",
-          description: 'lalaldsfsalfds大煞风景啊少雷地方就是打开房间少雷地方就收到了房间少雷封建时代雷锋精神独立开发阶段少雷开发建设的路口附近',
-          link : "http://www.hairongyi.com/activity/activityPage.htm?id=71",
-        },{
-          image:"http://img1.imgtn.bdimg.com/it/u=3461766366,1830101633&fm=21&gp=0.jpg",
-          title : "注册送688元",
-          description: 'lalaldsfsalfds大煞风景啊少雷地方就是打开房间少雷地方就收到了房间少雷封建时代雷锋精神独立开发阶段少雷开发建设的路口附近',
-          link : "http://www.hairongyi.com/activity/activityPage.htm?id=71",
-        }],
-        listPast: [{
-          image:"http://img1.imgtn.bdimg.com/it/u=3461766366,1830101633&fm=21&gp=0.jpg",
-          title : "past",
-          description: 'lalaldsfsalfds大煞风景啊少雷地方就是打开房间少雷地方就收到了房间少雷封建时代雷锋精神独立开发阶段少雷开发建设的路口附近',
-          link : "http://www.hairongyi.com/activity/activityPage.htm?id=71",
-        },{
-          image:"http://img1.imgtn.bdimg.com/it/u=3461766366,1830101633&fm=21&gp=0.jpg",
-          title : "past",
-          description: 'lalaldsfsalfds大煞风景啊少雷地方就是打开房间少雷地方就收到了房间少雷封建时代雷锋精神独立开发阶段少雷开发建设的路口附近',
-          link : "http://www.hairongyi.com/activity/activityPage.htm?id=71",
-        },{
-          image:"http://img1.imgtn.bdimg.com/it/u=3461766366,1830101633&fm=21&gp=0.jpg",
-          title : "注册送688元",
-          description: 'lalaldsfsalfds大煞风景啊少雷地方就是打开房间少雷地方就收到了房间少雷封建时代雷锋精神独立开发阶段少雷开发建设的路口附近',
-          link : "http://www.hairongyi.com/activity/activityPage.htm?id=71",
-        }],
-        topBanners: [{
-          description: 'lalal',
-          image:"http://7xlnmq.com1.z0.glb.clouddn.com/146785614428526886710819713900",
-          sort : 1,
-          link : "http://www.hairongyi.com/activity/activityPage.htm?id=71",
-          title : "注册送风景啊少雷地方就是打开房间少雷地方就收到了房间少雷封建时代雷锋精688元",
-          type : 0
-        }
-        ,{
-          description: 'oooo',
-          image:"http://img1.imgtn.bdimg.com/it/u=3461766366,1830101633&fm=21&gp=0.jpg",
-          sort : 1,
-          link : "http://www.hairongyi.com/activity/activityPage.htm?id=71",
-          title : "注册送风景啊少雷地方就是打开房间少雷地方就收到了房间少雷封建时代雷锋精688元",
-          type : 0
-        }
-        ]
+        listNow: [],
+        listPast: [],
+        topBanners: []
       };
       res.expose(Exp.dehydrate(data));
       var reactHtml = ReactDOMServer.renderToString(Index({data: data}));

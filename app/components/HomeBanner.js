@@ -15,20 +15,20 @@ export default class Footer extends React.Component{
     data:{}
   }
   nextPage(){
-    if(this.props.data.content.news_item[0].url){
-      window.location = this.props.data.content.news_item[0].url;
+    if(this.props.data.url){
+      window.location = this.props.data.url;
     }
   }
   render(){
     let imgStyle={
       width:'100%'
     }
-    sty.backgroundImage = 'url(' + 'http://7xskmo.com1.z0.glb.clouddn.com/' + this.props.data.content.news_item[0].thumb_media_id + '.jpg' + ')'
+    sty.backgroundImage = 'url(' + 'http://7xskmo.com1.z0.glb.clouddn.com/' + this.props.data.thumb_media_id + '.jpg' + ')'
     return (
       <div className='swiper_div'>
         <TapAble onTap={this.nextPage.bind(this)} style={sty}>
-          <img src={'http://7xskmo.com1.z0.glb.clouddn.com/' + this.props.data.content.news_item[0].thumb_media_id + '.jpg'} style={imgStyle}/>
-          <div className="swiper_div_title">{this.props.data.content.news_item[0].title}</div>
+          <img src={'http://7xskmo.com1.z0.glb.clouddn.com/' + this.props.data.thumb_media_id + '.jpg'} style={imgStyle}/>
+          <div className="swiper_div_title">{this.props.data.title}</div>
         </TapAble>
       </div>
     );

@@ -7,21 +7,21 @@ export default class item extends React.Component {
     
   }
   gotoPage(){
-    window.location = this.props.data.content.news_item[0].url;
+    window.location = this.props.data.url;
   }
   render(){
     // console.log(this.props.data)
     return (
       <TapAble onTap={this.gotoPage.bind(this)}>
-        <div className={this.props.data.content.news_item[0].thumb_media_id ? "sucai-img" : "hide"}>
-          <img src={'http://7xskmo.com1.z0.glb.clouddn.com/' + this.props.data.content.news_item[0].thumb_media_id + '.jpg'} />
+        <div className={this.props.data.thumb_media_id ? "sucai-img" : "hide"}>
+          <img src={'http://7xskmo.com1.z0.glb.clouddn.com/' + this.props.data.thumb_media_id + '.jpg'} />
         </div>
         <div className="sucai-content">
           <div className="sucai-title">
-            {this.props.data.content.news_item[0].title}
+            {this.props.data.title}
           </div>
           <div className="sucai-message">
-            {this.props.data.content.news_item[0].digest}
+            {this.props.data.digest}
           </div>
         </div>
       </TapAble>

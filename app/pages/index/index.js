@@ -63,6 +63,7 @@ export default class RegSucc extends BasePage {
   renderList(){
     if(this.state.list){
       return this.state.list.map(function(item, i){
+      console.log(item)
         return (
           <div key={i} className="sucai-item">
             <Item data={item} />

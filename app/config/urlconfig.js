@@ -3,7 +3,7 @@ module.exports={
      *   get
      *  request:{}
      */
-    index:'/dyh/index.php',
+    index:'/dyhadmin/getAllItems.php',
 }
 
 
