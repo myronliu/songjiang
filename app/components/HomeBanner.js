@@ -4,7 +4,7 @@ var sty={
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   width: '100%',
-  height: '130px',
+  height: '150px',
   display: 'block',
 };
 export default class Footer extends React.Component{
