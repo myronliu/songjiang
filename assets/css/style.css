@@ -1240,24 +1240,30 @@ input[type="button"] {
   border-bottom: solid 1px;
   border-bottom-color: #d6d4d4;
   padding-top: 6px;
+  padding-bottom: 6px;
 }
-/* line 80, ../../app/theme/sass/pages/index/_index.scss */
+/* line 81, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai-img {
-  width: 20%;
   display: inline-block;
   vertical-align: top;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
-/* line 84, ../../app/theme/sass/pages/index/_index.scss */
+/* line 93, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai-img > img {
   width: 100%;
 }
-/* line 88, ../../app/theme/sass/pages/index/_index.scss */
+/* line 97, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai-content {
   display: inline-block;
   width: 80%;
   padding-left: 10px;
 }
-/* line 93, ../../app/theme/sass/pages/index/_index.scss */
+/* line 102, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai-title {
   font-size: 16px;
   font-weight: bold;
@@ -1265,7 +1271,7 @@ input[type="button"] {
   overflow: hidden;
   white-space: nowrap;
 }
-/* line 100, ../../app/theme/sass/pages/index/_index.scss */
+/* line 109, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai-message {
   text-overflow: ellipsis;
   overflow: hidden;
