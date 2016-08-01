@@ -85,12 +85,12 @@ router.get(['/','/index'],function(req,res){
         }
       }
       if(listNow.length === 0){
-        var pastItem = listPast.length > 0 ? listPast[0] : {update_time: ''};
+        var pastItem = listPast.length > 0 ? listPast[0] : {create_time: ''};
         // var pastItem = {update_time: ''};
         var i = 0;
-        var pu = new Date(parseInt(pastItem.update_time) * 1000);
+        var pu = new Date(parseInt(pastItem.create_time) * 1000);
         listNow = listPast.filter(function(item){
-          var iu = new Date(parseInt(item.update_time) * 1000);
+          var iu = new Date(parseInt(item.create_time) * 1000);
           if(iu.getFullYear() === pu.getFullYear() && iu.getMonth() === pu.getMonth() && i<10){
             i++;
             return true;
