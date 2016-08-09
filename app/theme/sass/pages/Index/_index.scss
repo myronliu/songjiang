@@ -57,6 +57,9 @@
     vertical-align: middle;
     overflow-x: scroll;
     white-space: nowrap;
+    // position: fixed;
+    // margin-top: 150px;
+    // width: 100%;
     .item{
       display: inline-block;
       text-align: center;
@@ -69,6 +72,7 @@
   }
   .sucai{
     margin-top: 10px;
+    overflow-y: scroll;
   }
   .sucai-item{
     padding-left:10px;

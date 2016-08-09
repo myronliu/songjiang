@@ -11,7 +11,7 @@ import Item from '../../components/item';
 export default class RegSucc extends BasePage {
   state = {
     btnList:[{
-      title: '本月资讯',
+      title: '最新资讯',
       select: true
     },{
       title: '往期回顾'
@@ -27,7 +27,7 @@ export default class RegSucc extends BasePage {
     })
   }
   handleTouch(val){
-    if(val === "本月资讯"){
+    if(val === "最新资讯"){
       this.state.btnList[0].select = true;
       this.state.btnList[1].select = false;
       this.setState({
@@ -73,11 +73,18 @@ export default class RegSucc extends BasePage {
     }
   }
   render() {
+    debugger;
+    var height = {height: '732px'};
+    if(process.browser){
+      height.height = (document.body.clientHeight - 200) + 'px'
+    }
     return (          
       <Layout className={'index'} title={'首页'} isShowHeader={false} >
+        <div style={{position: 'relative'}}>
         {this.rendScrolBanner()}
+        </div>
         <BtnItem btnList={this.state.btnList} handleTouch={this.handleTouch.bind(this)}/>
-        <div className='sucai'>
+        <div className='sucai' style={height}>
           {this.renderList()}
         </div>
       </Layout>

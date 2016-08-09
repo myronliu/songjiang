@@ -1218,22 +1218,24 @@ input[type="button"] {
   overflow-x: scroll;
   white-space: nowrap;
 }
-/* line 60, ../../app/theme/sass/pages/index/_index.scss */
+/* line 63, ../../app/theme/sass/pages/index/_index.scss */
 .index .btnitem .item {
   display: inline-block;
   text-align: center;
   min-width: 80px;
 }
-/* line 65, ../../app/theme/sass/pages/index/_index.scss */
+/* line 68, ../../app/theme/sass/pages/index/_index.scss */
 .index .btnitem .item:first-child {
   border-right: solid 1px;
   border-right-color: #d6d4d4;
 }
-/* line 70, ../../app/theme/sass/pages/index/_index.scss */
+/* line 73, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai {
   margin-top: 10px;
+  height: 300px;
+  overflow-y: scroll;
 }
-/* line 73, ../../app/theme/sass/pages/index/_index.scss */
+/* line 78, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai-item {
   padding-left: 10px;
   padding-right: 10px;
@@ -1242,7 +1244,7 @@ input[type="button"] {
   padding-top: 6px;
   padding-bottom: 6px;
 }
-/* line 81, ../../app/theme/sass/pages/index/_index.scss */
+/* line 86, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai-img {
   display: inline-block;
   vertical-align: top;
@@ -1253,17 +1255,17 @@ input[type="button"] {
   background-position: center center;
   background-size: cover;
 }
-/* line 93, ../../app/theme/sass/pages/index/_index.scss */
+/* line 98, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai-img > img {
   width: 100%;
 }
-/* line 97, ../../app/theme/sass/pages/index/_index.scss */
+/* line 102, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai-content {
   display: inline-block;
   width: 80%;
   padding-left: 10px;
 }
-/* line 102, ../../app/theme/sass/pages/index/_index.scss */
+/* line 107, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai-title {
   font-size: 16px;
   font-weight: bold;
@@ -1271,7 +1273,7 @@ input[type="button"] {
   overflow: hidden;
   white-space: nowrap;
 }
-/* line 109, ../../app/theme/sass/pages/index/_index.scss */
+/* line 114, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai-message {
   text-overflow: ellipsis;
   overflow: hidden;

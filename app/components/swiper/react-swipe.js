@@ -19,12 +19,12 @@
     container: {
       overflow: 'hidden',
       visibility: 'hidden',
-      position: 'relative'
+      position: 'relative',
     },
 
     wrapper: {
       overflow: 'hidden',
-      position: 'relative'
+      position: 'relative',
     },
 
     child: {
