@@ -38,6 +38,9 @@ router.use(function(req,res,next){
 
 var ErrorView = React.createFactory(require('../pages/error'));
 var Index = React.createFactory(require('../pages/index/index'));
+var TestHome = React.createFactory(require('../pages/test/home'));
+var Question = React.createFactory(require('../pages/test/question'));
+var Correct = React.createFactory(require('../pages/test/correct'));
 
 // models
 var IndexController = require('../controllers/index');
@@ -46,6 +49,21 @@ var Exp =require('../helper/expose');
 router.get('/error',function(req,res){
   var reactHtml = ReactDOMServer.renderToString(ErrorView({message:"出错啦！"}));
   res.render('index', {reactOutput: reactHtml,title:'出错啦'});
+})
+
+router.get(['/test/home'],function(req,res){
+  var reactHtml = ReactDOMServer.renderToString(TestHome());
+  res.render('index', {reactOutput: reactHtml,title:'知识测堂'});
+})
+
+router.get(['/test/question'],function(req,res){
+  var reactHtml = ReactDOMServer.renderToString(Question({type: req.query.type}));
+  res.render('index', {reactOutput: reactHtml,title:'知识测堂'});
+})
+
+router.get(['/test/correct'],function(req,res){
+  var reactHtml = ReactDOMServer.renderToString(Correct({type: req.query.type, qs: req.query.qs}));
+  res.render('index', {reactOutput: reactHtml,title:'知识测堂'});
 })
 
 router.get('/process1',function(req,res){

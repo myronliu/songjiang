@@ -1232,10 +1232,9 @@ input[type="button"] {
 /* line 73, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai {
   margin-top: 10px;
-  height: 300px;
   overflow-y: scroll;
 }
-/* line 78, ../../app/theme/sass/pages/index/_index.scss */
+/* line 77, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai-item {
   padding-left: 10px;
   padding-right: 10px;
@@ -1244,7 +1243,7 @@ input[type="button"] {
   padding-top: 6px;
   padding-bottom: 6px;
 }
-/* line 86, ../../app/theme/sass/pages/index/_index.scss */
+/* line 85, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai-img {
   display: inline-block;
   vertical-align: top;
@@ -1255,17 +1254,17 @@ input[type="button"] {
   background-position: center center;
   background-size: cover;
 }
-/* line 98, ../../app/theme/sass/pages/index/_index.scss */
+/* line 97, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai-img > img {
   width: 100%;
 }
-/* line 102, ../../app/theme/sass/pages/index/_index.scss */
+/* line 101, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai-content {
   display: inline-block;
   width: 80%;
   padding-left: 10px;
 }
-/* line 107, ../../app/theme/sass/pages/index/_index.scss */
+/* line 106, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai-title {
   font-size: 16px;
   font-weight: bold;
@@ -1273,9 +1272,141 @@ input[type="button"] {
   overflow: hidden;
   white-space: nowrap;
 }
-/* line 114, ../../app/theme/sass/pages/index/_index.scss */
+/* line 113, ../../app/theme/sass/pages/index/_index.scss */
 .index .sucai-message {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+/* line 1, ../../app/theme/sass/pages/test/_question.scss */
+.question {
+  height: 100%;
+  background-color: white;
+  margin: 30px 5px;
+  border-radius: 15px;
+  padding: 10px;
+}
+/* line 7, ../../app/theme/sass/pages/test/_question.scss */
+.question .header {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-image: url(/images/head1.png);
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+}
+/* line 18, ../../app/theme/sass/pages/test/_question.scss */
+.question .title {
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  background-image: url(/images/head2.png);
+}
+/* line 24, ../../app/theme/sass/pages/test/_question.scss */
+.question .title .back {
+  width: 10%;
+  display: inline-block;
+  text-align: center;
+  font-weight: bolder;
+}
+/* line 31, ../../app/theme/sass/pages/test/_question.scss */
+.question .content {
+  background-color: #0bca0b;
+  color: white;
+  font-weight: bolder;
+  text-align: center;
+  width: 105px;
+  line-height: 30px;
+  font-size: 15px;
+  border-radius: 8px;
+}
+/* line 41, ../../app/theme/sass/pages/test/_question.scss */
+.question .answerItem {
+  margin-right: 10px;
+  margin-top: 1px;
+  background-color: white;
+  line-height: 50px;
+  padding-left: 10px;
+  border-bottom: 1px solid;
+  border-bottom-color: #ccc;
+}
+/* line 49, ../../app/theme/sass/pages/test/_question.scss */
+.question .answerItem > span {
+  margin-left: 10px;
+}
+/* line 53, ../../app/theme/sass/pages/test/_question.scss */
+.question .button {
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+/* line 59, ../../app/theme/sass/pages/test/_question.scss */
+.question .subject {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  line-height: 20px;
+  font-size: 16px;
+  color: #212121;
+  border-bottom: 1px solid;
+  border-bottom-color: #ccc;
+}
+
+/* line 1, ../../app/theme/sass/helper/_result.scss */
+.totalDialog {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 22;
+}
+/* line 9, ../../app/theme/sass/helper/_result.scss */
+.totalDialog .total-boxMain {
+  text-align: center;
+  margin-top: 45px;
+}
+/* line 12, ../../app/theme/sass/helper/_result.scss */
+.totalDialog .total-boxMain img {
+  width: 80%;
+}
+/* line 16, ../../app/theme/sass/helper/_result.scss */
+.totalDialog .total-boxMain span {
+  display: block;
+  left: 37%;
+  margin-top: -45px;
+  font-size: 24px;
+  color: #c73c00;
+}
+/* line 24, ../../app/theme/sass/helper/_result.scss */
+.totalDialog .total-kuang {
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+}
+/* line 28, ../../app/theme/sass/helper/_result.scss */
+.totalDialog .total-kuang > img {
+  width: 35%;
+}
+/* line 31, ../../app/theme/sass/helper/_result.scss */
+.totalDialog .total-kuang > img:first-child {
+  margin-right: 10%;
+}
+/* line 35, ../../app/theme/sass/helper/_result.scss */
+.totalDialog .total-reward-ok {
+  text-align: center;
+}
+/* line 37, ../../app/theme/sass/helper/_result.scss */
+.totalDialog .total-reward-ok img {
+  width: 100px;
+  margin-top: 15px;
+}
+
+/* line 44, ../../app/theme/sass/helper/_result.scss */
+.display {
+  display: none;
 }

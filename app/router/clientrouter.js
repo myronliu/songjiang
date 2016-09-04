@@ -3,6 +3,9 @@ var ReactDOM = require('react-dom');
 import globleImport from '../helper/globalImport.js'
 var EvoFlux = require('evoflux');
 var ErrorView = require('../pages/error');
+var TestHome = require('../pages/test/home');
+var Question = require('../pages/test/question');
+var Correct = require('../pages/test/correct');
 var Index = require('../pages/index/index');
 var Exp = require('../helper/expose');
 
@@ -15,6 +18,15 @@ var headerContainer = document.getElementById('header');
 var Router = EvoFlux.createRouter({
   '/error': function(){
     ReactDOM.render(<ErrorView message={"出错啦！"}/>, container);
+  },
+  '/test/home': function(){
+    ReactDOM.render(<TestHome />, container);
+  },
+  '/test/question': function(){
+    ReactDOM.render(<Question type={this.query('type')}/>, container);
+  },
+  '/test/correct': function(){
+    ReactDOM.render(<Correct type={this.query('type')} qs={this.query("qs")}/>, container);
   },
   '/': function(){
     Exp.rehydrate();
