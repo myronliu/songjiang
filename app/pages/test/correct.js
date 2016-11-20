@@ -6,10 +6,47 @@ import BasePage from '../../components/BasePage';
 import ReactSwipe from '../../components/swiper/react-swipe';
 import HomeBanner from '../../components/HomeBanner';
 import BtnItem from '../../components/btnitem';
-import Item from '../../components/item';
+// import Item from '../../components/item';
 import NextButton from '../../components/nextbutton';
 import QuestionConfig from '../../config/questions';
 import Result from '../../helper/result';
+
+
+class Item extends React.Component{
+
+  handleOSAnswer(i){
+    
+  }
+
+  renderAnswers(){
+    return this.props.question.answers.map(function(item,i){
+      return (
+        <TapAble key={i} className="answerItem block" >
+          <input type="radio" checked={this.props.question.answer == (i+1).toString() ? "checked" : ""} disabled />{item.content}
+        </TapAble>
+      )
+    }.bind(this))
+  }
+
+  componentDidMount(){
+
+  }
+
+  render(){
+    return (
+        <div className="question">
+          <div className="content">
+            {"第 " + (this.props.index + 1) + " 题(10分)"}
+          </div>
+          <div className="subject">
+            {this.props.question.content}
+          </div>
+          {this.renderAnswers()}
+        </div>
+      )
+  }
+}
+
 
 export default class RegSucc extends BasePage {
   state = {
@@ -31,19 +68,16 @@ export default class RegSucc extends BasePage {
     ],
     questionArray: [],
     current: 0,
-    btnTitle: "下一题",
+    btnTitle: "返回",
   };
   componentDidMount(){
     var arr = this.props.qs.split(',');
     arr = arr.map(function(item){
-      return parseInt(item);
+      return QuestionConfig.ag[parseInt(item)];
     })
     this.setState({
       questionArray: arr,
       current: 0,
-      subject: QuestionConfig.ag[arr[0]].content,
-      answers: QuestionConfig.ag[arr[0]].answers,
-      correctA: QuestionConfig.ag[arr[0]].answer
     })
   }
   showLoading(show) {
@@ -61,36 +95,21 @@ export default class RegSucc extends BasePage {
   }
 
   nextBtnPress(){
-    if(this.state.current < this.state.questionArray.length-1){
-      var current = this.state.current + 1;
-      this.setState({
-        current: current,
-        subject: QuestionConfig.ag[this.state.questionArray[current]].content,
-        answers: QuestionConfig.ag[this.state.questionArray[current]].answers,
-        correctA: QuestionConfig.ag[this.state.questionArray[current]].answer,
-        btnTitle: current < this.state.questionArray.length-1 ? "下一题" : "返回",
-        ser: "第 " + (current + 1) + " 题(10分)"
-      })
-    }else{
-      window.to('/test/home')
-    }
-    
+    window.to('/test/home')
+  }
+
+  renderQuestions(){
+    return this.state.questionArray.map(function(item, index){
+      return <Item key={'question' + index} question={item} index={index}/>
+    }.bind(this))
   }
 
   render() {
     return (          
       <Layout className={'index'} title={this.props.type=="ag" ? '安规知识小测堂（单选）' : '党务知识小测堂（单选）'} isShowHeader={true} >
-        <div className="question">
-          <div className="content">
-            {this.state.ser}
-          </div>
-          <div className="subject">
-            {this.state.subject}
-          </div>
-          {this.renderAnswers()}
-          <div className="button">
-            <NextButton title={this.state.btnTitle} onTouchEnd={this.nextBtnPress.bind(this)}></NextButton>
-          </div>
+        {this.renderQuestions()}
+        <div className="button">
+          <NextButton title={this.state.btnTitle} onTouchEnd={this.nextBtnPress.bind(this)}></NextButton>
         </div>
       </Layout>
     )
