@@ -83,6 +83,8 @@ export default class RegSucc extends BasePage {
       var r = Math.round(Math.random() * 89);
       if(arr.indexOf('array') === -1)
       {
+        QuestionConfig.ag[r].checked = -1;
+        QuestionConfig.ag[r].selected = false;
         arr.push(QuestionConfig.ag[r]);
         rN.push(r);
       }
@@ -123,6 +125,7 @@ export default class RegSucc extends BasePage {
   nextBtnPress(){
     var choosed = false;
     var qtI = 0;
+    this.state.wrongItems = [];
 
     for(var i = 0; i < this.state.questionArray.length; i++){
       if(this.state.questionArray[i].selected){
